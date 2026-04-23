@@ -1,12 +1,15 @@
 # Maltese PQ Synthetic Data Generator
 
-Generate synthetic Maltese Parliamentary Question (PQ) and answer data in English using the Google Gemini API.
+Generate synthetic Maltese Parliamentary Question (PQ) and answer data in English using either Google Gemini or a local Ollama model.
 
 This project produces fabricated but plausible records for six discourse categories:
 - Question categories: `A1`, `A2`, `A3`
 - Answer categories: `B1`, `B2`, `B3`
 
-The core implementation is in:
+The core implementation is now available in:
+- `maltese_pq_synthetic_generator.py`
+
+The original notebook is still included in:
 - `maltese_pq_synthetic_generator_gemini_api.ipynb`
 
 Generated CSV files are written to:
@@ -47,9 +50,9 @@ Answer categories (`B1–B3`) use:
 
 ## How It Works
 
-The notebook pipeline:
-1. Loads environment variables (`GOOGLE_API_KEY`, optional `GEMINI_MODEL`).
-2. Builds category-specific prompts and calls Gemini `generateContent`.
+The generation pipeline:
+1. Loads environment variables for provider, model, and output settings.
+2. Builds category-specific prompts and calls either Gemini or Ollama.
 3. Forces JSON output and parses model text safely.
 4. Validates:
    - exact row count (`n`)
@@ -72,36 +75,64 @@ Prompt constraints enforce:
 
 - Python 3.12+ (notebook metadata currently uses Python `3.12.3`)
 - Jupyter environment (or VS Code notebook support)
-- Google AI Studio API key
+- Google AI Studio API key for Gemini, or a running Ollama instance for local models
 
-Required environment variable:
+Required environment variable for Gemini:
 - `GOOGLE_API_KEY`
 
-Optional environment variable:
-- `GEMINI_MODEL` (defaults to `gemini-flash-latest`)
+Optional environment variables:
+- `LLM_PROVIDER` (defaults to `ollama`)
+- `LLM_MODEL` (defaults to `llama3.1:8b`)
+- `OLLAMA_BASE_URL` (defaults to `http://localhost:11434`)
+- `PQ_DEFAULT_N` (defaults to `2` in code for lightweight testing)
+- `PQ_DEFAULT_TEMPERATURE`
+- `PQ_DEFAULT_APPROACH`
+- `PQ_OUTPUT_DIR`
+- `PQ_MAX_OUTPUT_TOKENS`
 
 ## Setup
 
 1. Create and activate a virtual environment (optional but recommended).
-2. Install dependencies used by the notebook:
+2. Install dependencies:
 
 ```bash
 pip install pandas python-dotenv requests
 ```
 
-3. Add environment variables in your shell or `.env` file:
+3. Add environment variables in your shell or `.env` file.
+
+Gemini example:
 
 ```env
+LLM_PROVIDER=gemini
 GOOGLE_API_KEY=your_key_here
-GEMINI_MODEL=gemini-flash-latest
+LLM_MODEL=gemini-2.5-flash
+```
+
+Ollama example:
+
+```env
+LLM_PROVIDER=ollama
+LLM_MODEL=llama3.1:8b
+OLLAMA_BASE_URL=http://localhost:11434
 ```
 
 ## Usage
 
-Open and run `maltese_pq_synthetic_generator_gemini_api.ipynb` cell by cell.
+Use the Python module directly, or import it into the notebook:
+
+```python
+from maltese_pq_synthetic_generator import run_and_save, set_model, set_provider
+
+set_provider("gemini")
+set_model("gemini-2.5-flash")
+df, metrics = run_and_save("A1", n=10, approach="one_shot")
+```
+
+If you prefer notebooks, you can still open and run `maltese_pq_synthetic_generator_gemini_api.ipynb` cell by cell.
 
 Main helper:
-- `run_and_save(category_id: str, n: int = 10, temperature: float = 0.7)`
+- `run_and_save(category_id: str, n: int = 10, temperature: float = 0.7, approach: str | None = None)`
 
 Example calls (one category at a time):
 - `run_and_save("A1")`
@@ -140,6 +171,7 @@ Example:
 ```text
 .
 ├── README.md
+├── maltese_pq_synthetic_generator.py
 ├── maltese_pq_synthetic_generator_gemini_api.ipynb
 └── pq_synthetic_outputs/
 ```
@@ -149,3 +181,36 @@ Example:
 - This tool is for synthetic data generation only.
 - Generated text should be reviewed before research or production use.
 - Do not treat generated rows as factual parliamentary records.
+
+
+
+## Steps to run locally 
+
+1. Create a virtual environment:
+python3 -m venv .venv
+source .venv/bin/activate
+
+
+2. Install dependencies:
+pip install pandas python-dotenv requests
+
+
+3. Make sure Ollama is running and the model exists:
+curl http://localhost:11434/api/tags
+ollama pull llama3.1:8b
+
+
+4. Set environment variables, either in a .env file:
+
+LLM_PROVIDER=ollama
+LLM_MODEL=llama3.1:8b
+OLLAMA_BASE_URL=http://localhost:11434
+PQ_DEFAULT_N=2
+
+
+5. Run like this:
+python -c 'from maltese_pq_synthetic_generator import run_and_save; run_and_save("A1", n=2)'
+
+
+
+
