@@ -482,3 +482,133 @@ def evaluate_generation(df: pd.DataFrame, spec: CategorySpec) -> Dict[str, float
 
     non_empty_q = (
         df["Question (EN)"].astype(str).str.strip().ne("").mean()
+        if "Question (EN)" in df.columns
+        else 0.0
+    )
+    non_empty_a = (
+        df["Answer (EN)"].astype(str).str.strip().ne("").mean()
+        if "Answer (EN)" in df.columns
+        else 0.0
+    )
+
+    dup_ratio = df.astype(str).duplicated().mean()
+    avg_q_len = df["Question (EN)"].astype(str).str.len().mean() if "Question (EN)" in df.columns else 0.0
+    avg_a_len = df["Answer (EN)"].astype(str).str.len().mean() if "Answer (EN)" in df.columns else 0.0
+
+    # Keep the score simple and interpretable: mostly schema correctness, then field completeness.
+    score = (
+        0.20 * schema_valid
+        + 0.15 * date_valid
+        + 0.15 * pq_numeric
+        + 0.15 * mp_allowed
+        + 0.10 * ministry_allowed
+        + 0.125 * non_empty_q
+        + 0.125 * non_empty_a
+    )
+
+    return {
+        "n": float(n),
+        "schema_valid_rate": float(schema_valid),
+        "date_format_valid_rate": float(date_valid),
+        "pq_no_numeric_rate": float(pq_numeric),
+        "mp_allowed_rate": float(mp_allowed),
+        "ministry_allowed_rate": float(ministry_allowed),
+        "non_empty_question_rate": float(non_empty_q),
+        "non_empty_answer_rate": float(non_empty_a),
+        "duplicate_row_ratio": float(dup_ratio),
+        "avg_question_length": float(avg_q_len),
+        "avg_answer_length": float(avg_a_len),
+        "overall_score": float(score),
+    }
+
+
+def compare_approaches(
+    category_id: str,
+    n: Optional[int] = None,
+    temperature: Optional[float] = None,
+) -> pd.DataFrame:
+    """Run the same category with both prompt strategies and compare metrics."""
+
+    spec = CATEGORY_SPECS[category_id]
+    rows = []
+    for approach in ("zero_shot", "one_shot"):
+        df = generate_set(category_id=category_id, n=n, temperature=temperature, approach=approach)
+        metrics = evaluate_generation(df, spec)
+        for key, value in metrics.items():
+            rows.append(
+                {
+                    "category_id": category_id,
+                    "category_name": spec.name,
+                    "approach": approach,
+                    "metric": key,
+                    "value": value,
+                    "provider": CONFIG.provider,
+                    "model_name": CONFIG.model_name,
+                    "timestamp": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+                }
+            )
+    return pd.DataFrame(rows)
+
+
+def run_and_save(
+    category_id: str,
+    n: Optional[int] = None,
+    temperature: Optional[float] = None,
+    approach: Optional[APPROACH] = None,
+) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    """Generate rows, evaluate them, and persist both outputs to CSV."""
+
+    n = n if n is not None else CONFIG.default_n
+    temperature = temperature if temperature is not None else CONFIG.default_temperature
+    approach = approach if approach is not None else CONFIG.default_approach
+
+    spec = CATEGORY_SPECS[category_id]
+    df = generate_set(category_id=category_id, n=n, temperature=temperature, approach=approach)
+    metrics = evaluate_generation(df, spec)
+
+    stamp = time.strftime("%Y%m%d_%H%M%S")
+    base = f"{category_id}_{approach}_{CONFIG.provider}_{CONFIG.model_name.replace(':', '-')}_{stamp}"
+
+    data_path = os.path.join(CONFIG.output_dir, f"{base}.csv")
+    metrics_path = os.path.join(CONFIG.output_dir, f"{base}_metrics.csv")
+    summary_path = os.path.join(CONFIG.output_dir, "summary_metrics.csv")
+
+    df.to_csv(data_path, index=False)
+
+    metrics_df = pd.DataFrame(
+        [
+            {
+                "category_id": category_id,
+                "category_name": spec.name,
+                "approach": approach,
+                "n": n,
+                "temperature": temperature,
+                "provider": CONFIG.provider,
+                "model_name": CONFIG.model_name,
+                "timestamp": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+                **metrics,
+            }
+        ]
+    )
+    metrics_df.to_csv(metrics_path, index=False)
+
+    # Preserve a single rolling summary file across runs.
+    if os.path.exists(summary_path):
+        old = pd.read_csv(summary_path)
+        pd.concat([old, metrics_df], ignore_index=True).to_csv(summary_path, index=False)
+    else:
+        metrics_df.to_csv(summary_path, index=False)
+
+    print("Saved data:", data_path)
+    print("Saved metrics:", metrics_path)
+    print("Updated summary:", summary_path)
+
+    try:
+        from IPython.display import display
+
+        display(df.head(5))
+        display(metrics_df)
+    except ImportError:
+        pass
+
+    return df, metrics_df
