@@ -1,0 +1,2 @@
+category_id,category_name,approach,n,temperature,provider,model_name,status,error,timestamp,schema_valid_rate,date_format_valid_rate,pq_no_numeric_rate,mp_allowed_rate,ministry_allowed_rate,non_empty_question_rate,non_empty_answer_rate,duplicate_row_ratio,avg_question_length,avg_answer_length,overall_score
+B3,Non-Replies (Deferral/Referral/Reroute),zero_shot,10.0,0.7,gemini,gemini-flash-latest,success,,2026-05-08T08:02:47Z,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,177.8,98.3,1.0
