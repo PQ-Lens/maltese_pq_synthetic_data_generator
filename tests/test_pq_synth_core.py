@@ -174,6 +174,55 @@ class ProviderResolutionTests(unittest.TestCase):
         self.assertIn("gemini:gemini-2.5-flash", ids)
         self.assertIn("mistral:mistral-small-latest", ids)
 
+    def test_default_max_output_tokens_allows_larger_json_batches(self):
+        with patch.dict(os.environ, {}, clear=True):
+            self.assertEqual(generator.active_config()["max_output_tokens"], 8192)
+
+    @patch("maltese_pq_synthetic_generator.requests.post")
+    def test_gemini_max_tokens_finish_reason_is_actionable(self, mock_post):
+        mock_post.return_value = FakeResponse(
+            {
+                "candidates": [
+                    {
+                        "finishReason": "MAX_TOKENS",
+                        "content": {
+                            "parts": [
+                                {
+                                    "text": '[{"Date":"13/03/2026","PQ No.":"12345","MP":"Chris'
+                                }
+                            ]
+                        },
+                    }
+                ],
+                "usageMetadata": {
+                    "promptTokenCount": 100,
+                    "candidatesTokenCount": 2500,
+                    "totalTokenCount": 2600,
+                },
+            }
+        )
+
+        with patch.dict(
+            os.environ,
+            {
+                "GOOGLE_API_KEY": "gemini-key",
+                "GEMINI_MODEL": "gemini-flash-latest",
+            },
+            clear=True,
+        ):
+            with self.assertRaises(ValueError) as ctx:
+                generator.call_llm_chat_json(
+                    messages=[{"role": "user", "content": "[]"}],
+                    provider="gemini",
+                    model="gemini-flash-latest",
+                    max_tokens=2500,
+                )
+
+        error = str(ctx.exception)
+        self.assertIn("maxOutputTokens=2500", error)
+        self.assertIn("finishReason=MAX_TOKENS", error)
+        self.assertIn("PQ_MAX_OUTPUT_TOKENS", error)
+
 
 class GenerationTests(unittest.TestCase):
     @patch("pq_synth_core.requests.post")

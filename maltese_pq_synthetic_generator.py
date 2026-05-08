@@ -28,6 +28,7 @@ DATE_RE = re.compile(r"^\d{2}/\d{2}/\d{4}$")
 TRANSIENT_HTTP_STATUS_CODES = {408, 409, 425, 429, 500, 502, 503, 504}
 APPROACH = Literal["zero_shot", "one_shot"]
 PROVIDER = Literal["ollama", "gemini", "mistral"]
+DEFAULT_MAX_OUTPUT_TOKENS = 8192
 
 SUPPORTED_PROVIDERS: Tuple[str, ...] = ("ollama", "gemini", "mistral")
 DEFAULT_PROVIDER = "ollama"
@@ -361,7 +362,7 @@ def _default_output_dir() -> str:
 
 
 def _default_max_output_tokens() -> int:
-    return _env_int("PQ_MAX_OUTPUT_TOKENS", 2500)
+    return _env_int("PQ_MAX_OUTPUT_TOKENS", DEFAULT_MAX_OUTPUT_TOKENS)
 
 
 def _default_api_retries() -> int:
@@ -678,6 +679,19 @@ def _shorten(text: str, limit: int = 500) -> str:
     return clean[: limit - 3] + "..."
 
 
+def _gemini_usage_summary(data: Dict[str, Any]) -> str:
+    usage = data.get("usageMetadata")
+    if not isinstance(usage, dict):
+        return "usage unavailable"
+
+    parts = []
+    for key in ("promptTokenCount", "candidatesTokenCount", "totalTokenCount"):
+        value = usage.get(key)
+        if value is not None:
+            parts.append(f"{key}={value}")
+    return ", ".join(parts) if parts else "usage unavailable"
+
+
 def _provider_http_error(provider_name: str, response: requests.Response) -> ProviderRequestError:
     status = getattr(response, "status_code", "unknown")
     reason = getattr(response, "reason", "") or ""
@@ -794,12 +808,26 @@ class GeminiProvider:
         if not candidates:
             raise ValueError(f"Gemini returned no candidates: {data}")
 
-        parts = candidates[0].get("content", {}).get("parts", [])
+        candidate = candidates[0]
+        finish_reason = candidate.get("finishReason")
+        parts = candidate.get("content", {}).get("parts", [])
         text = "".join(part.get("text", "") for part in parts if isinstance(part, dict)).strip()
         if not text:
-            raise ValueError(f"Gemini response had no text content: {data}")
+            finish_detail = f" finishReason={finish_reason};" if finish_reason else ""
+            raise ValueError(
+                f"Gemini response had no text content.{finish_detail} {_gemini_usage_summary(data)}"
+            )
 
-        return _normalize_rows_payload(_extract_json_from_text(text))
+        try:
+            return _normalize_rows_payload(_extract_json_from_text(text))
+        except json.JSONDecodeError as exc:
+            if finish_reason == "MAX_TOKENS":
+                raise ValueError(
+                    f"Gemini stopped at maxOutputTokens={max_tokens} before completing valid JSON "
+                    f"(finishReason=MAX_TOKENS; {_gemini_usage_summary(data)}). "
+                    "Increase PQ_MAX_OUTPUT_TOKENS or pass --max-output-tokens."
+                ) from exc
+            raise
 
 
 class MistralProvider:
