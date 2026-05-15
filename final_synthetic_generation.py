@@ -1,19 +1,32 @@
-"""Runnable entrypoint for the Maltese PQ synthetic data generator.
+"""Final runnable entrypoint for one-file Maltese PQ synthetic data output.
 
-This file is intentionally small: the maintained generator implementation lives
-in `maltese_pq_synthetic_generator.py`. Keeping this as a launcher means VPS
-runs can call one stable filename while the real logic stays in one place.
+The maintained generation engine lives in `maltese_pq_synthetic_generator.py`.
+This script controls the final run shape: 100 total rows by default, spread
+across the selected categories, and saved as one combined CSV.
 """
 
 from __future__ import annotations
 
 import os
 import sys
+import time
 from pathlib import Path
-from typing import Any, Dict, List, Sequence, Tuple
+from typing import Any, Dict, List, Sequence
 
 
 DEFAULT_TOTAL_ROWS = 100
+FINAL_COLUMNS = [
+    "DATE",
+    "PQ NO.",
+    "MP",
+    "Title",
+    "Question",
+    "Question Type",
+    "Question Categorization accuracy",
+    "Answer",
+    "Answer Type",
+    "Answer Categorization accuracy",
+]
 
 
 def _restart_inside_local_venv() -> None:
@@ -78,6 +91,53 @@ def _build_parser(generator: Any) -> Any:
     return parser
 
 
+def _slugify(value: str) -> str:
+    return "".join(char if char.isalnum() else "-" for char in value).strip("-").lower()
+
+
+def _final_rows(generator: Any, category_id: str, df: Any) -> List[Dict[str, str]]:
+    spec = generator.CATEGORY_SPECS[category_id]
+    is_question_category = spec.kind == "question"
+    question_type = spec.name if is_question_category else ""
+    answer_type = spec.name if not is_question_category else ""
+
+    rows: List[Dict[str, str]] = []
+    for record in df.to_dict(orient="records"):
+        rows.append(
+            {
+                "DATE": record.get("Date", ""),
+                "PQ NO.": record.get("PQ No.", ""),
+                "MP": record.get("MP", ""),
+                "Title": record.get("Title (EN)", ""),
+                "Question": record.get("Question (EN)", ""),
+                "Question Type": question_type,
+                "Question Categorization accuracy": "",
+                "Answer": record.get("Answer (EN)", ""),
+                "Answer Type": answer_type,
+                "Answer Categorization accuracy": "",
+            }
+        )
+    return rows
+
+
+def _write_final_csv(
+    generator: Any,
+    rows: Sequence[Dict[str, str]],
+    *,
+    output_dir: str,
+    approach: str,
+    provider: str,
+    model: str,
+) -> Path:
+    out_dir = Path(output_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    stamp = time.strftime("%Y%m%d_%H%M%S")
+    model_slug = _slugify(model.replace(":", "-"))
+    path = out_dir / f"final_synthetic_pq_{approach}_{provider}_{model_slug}_{stamp}.csv"
+    generator.pd.DataFrame(rows, columns=FINAL_COLUMNS).to_csv(path, index=False)
+    return path
+
+
 def main() -> int:
     _restart_inside_local_venv()
 
@@ -118,26 +178,26 @@ def main() -> int:
     print(f"Categories: {', '.join(categories)}")
     print(f"Row distribution: {distribution_text}")
 
-    results: Dict[str, Tuple[Any, Any]] = {}
+    rows: List[Dict[str, str]] = []
     failures: List[Any] = []
     for category_id in categories:
         row_count = distribution[category_id]
         print(f"\nGenerating {category_id} ({generator.CATEGORY_SPECS[category_id].name})")
         print(f"Rows for {category_id}: {row_count}")
         try:
-            results[category_id] = generator.run_and_save(
+            df = generator.generate_set(
                 category_id=category_id,
                 n=row_count,
                 temperature=args.temperature,
                 approach=args.approach,
                 provider=selected_model.provider,
                 model=selected_model.model,
-                output_dir=args.output_dir,
                 retries=args.retries,
                 max_tokens=args.max_output_tokens,
                 api_retries=args.api_retries,
                 api_retry_backoff=args.api_retry_backoff,
             )
+            rows.extend(_final_rows(generator, category_id, df))
         except Exception as exc:
             error = generator._redact_secrets(exc)
             failures.append(
@@ -147,30 +207,20 @@ def main() -> int:
                     error=error,
                 )
             )
-            metrics_path = generator._write_failure_metrics(
-                category_id=category_id,
-                n=row_count,
-                temperature=args.temperature,
-                approach=args.approach,
-                provider=selected_model.provider,
-                model=selected_model.model,
-                output_dir=args.output_dir,
-                error=error,
-            )
             print(f"Failed {category_id}: {error}", file=sys.stderr)
-            print(f"Saved failure metrics: {metrics_path}", file=sys.stderr)
             if args.fail_fast:
                 break
 
-    aggregate_path = generator._write_aggregate_csv(
-        results=results,
+    output_path = _write_final_csv(
+        generator,
+        rows,
         output_dir=args.output_dir,
         approach=args.approach,
         provider=selected_model.provider,
         model=selected_model.model,
     )
-    if aggregate_path:
-        print(f"\nSaved combined data: {aggregate_path}")
+    print(f"\nSaved final data: {output_path}")
+    print(f"Final row count: {len(rows)}")
 
     if failures:
         failed_ids = ", ".join(failure.category_id for failure in failures)
