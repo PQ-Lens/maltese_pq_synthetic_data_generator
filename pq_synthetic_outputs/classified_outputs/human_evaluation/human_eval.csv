@@ -1,0 +1,18 @@
+,,human_ebuka_evaluation Metric,,,,,,,,,,,,,,
+,,"Computed from the uploaded Ebuka Evaluation - Human Eval.xlsx file. Since every listed human-evaluated row has Accuracy = yes, the human Ebuka evaluation metrics are all 1.0 for precision, recall, F1, and accuracy.",,,,,,,,,,,,,,
+"Computed from the uploaded Ebuka Evaluation - Human Eval.xlsx file. Since every listed human-evaluated row has Accuracy = yes, the human Ebuka evaluation metrics are all 1.0 for precision, recall, F1, and accuracy.",metric_scope,category_id,category_name,evaluated_count,assigned_count,human_ebuka_reference_count,yes_count,no_count,true_positive,false_positive,false_negative,precision,recall,f1,accuracy,based_on_column
+question,category,A1,Information-Seeking Questions,11,4,4,4,0,4,0,0,1,1,1,1,Question Categorization accuracy
+question,category,A2,Assertion / Hidden-Accusation Questions,11,3,3,3,0,3,0,0,1,1,1,1,Question Categorization accuracy
+question,category,A3,Request / Directive Questions,11,4,4,4,0,4,0,0,1,1,1,1,Question Categorization accuracy
+question,macro_average,ALL,All categories,11,11,11,11,0,11,0,0,1,1,1,1,Question Categorization accuracy
+question,micro_average,ALL,All categories,11,11,11,11,0,11,0,0,1,1,1,1,Question Categorization accuracy
+answer,category,B1,Replies (Direct Answers),9,2,2,2,0,2,0,0,1,1,1,1,Answer Categorization accuracy
+answer,category,B2,Answers by Implication (Indirect/Partial),9,2,2,2,0,2,0,0,1,1,1,1,Answer Categorization accuracy
+answer,category,B3,Non-Replies (Deferral/Referral/Reroute),9,5,5,5,0,5,0,0,1,1,1,1,Answer Categorization accuracy
+answer,macro_average,ALL,All categories,9,9,9,9,0,9,0,0,1,1,1,1,Answer Categorization accuracy
+answer,micro_average,ALL,All categories,9,9,9,9,0,9,0,0,1,1,1,1,Answer Categorization accuracy
+,,Summary,,,,,,,,,,,,,,
+,,target,evaluated rows,yes,no,accuracy,,,,,,,,,,
+,,question,11,11,0,1,,,,,,,,,,
+,,answer,9,9,0,1,,,,,,,,,,
+,,total,20,20,0,1,,,,,,,,,,

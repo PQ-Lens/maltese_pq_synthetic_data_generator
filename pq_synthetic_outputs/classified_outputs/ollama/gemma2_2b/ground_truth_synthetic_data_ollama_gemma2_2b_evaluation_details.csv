@@ -1,0 +1,97 @@
+row_index,target,assigned_category_id,assigned_category_name,predicted_category_id,predicted_category_name,accurate,confidence,rationale
+0,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks specific data on foster care placements and age groups.
+1,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,medium,"The question asks for the dates of road resurfacing, which is a factual request."
+2,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks information on specific schools and their new lab equipment.
+3,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,medium,"The question asks for the occupancy rate of industrial units, which is a factual request."
+4,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks information on bed capacity at a specific facility.
+5,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,medium,The question seeks a specific numerical count of enforcement officers.
+6,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question asks for a list of new firefighting vehicles purchased in the past 24 months.
+7,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,medium,The question seeks specific locations of newly installed EV charging points.
+8,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question asks for a specific number of trees planted in Gozo as part of the afforestation project.
+9,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,medium,The question seeks a specific number of students who participated in a literacy program.
+10,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks specific information about recruitment numbers.
+11,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,medium,The question asks for a specific number of applications approved within a time frame.
+12,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks the total amount disbursed to SMEs in a specific year.
+13,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,medium,The question asks for a specific number of passengers using a service.
+14,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks a list of medicines reported as out of stock.
+15,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,medium,The question seeks specific information about the number of reservoirs cleaned and restored.
+16,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question asks for a concrete number regarding the localities served by Community Policing teams.
+17,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,medium,The question implies criticism of the government's approach to road maintenance in Gozo.
+18,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,high,The question uses a veiled accusation about the effectiveness of the housing strategy.
+19,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,medium,The question implies that enforcement actions have been lax and raises concerns about safety regulations.
+20,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,high,The question implies criticism of the Ministry's handling of teacher shortages and uses a veiled accusation to challenge their response.
+21,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,medium,The question challenges the Minister's justification for delays in mental health facility refurbishment by implying it is a result of inaction and compromising patient care.
+22,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,high,The question implies that community policing is not effective due to understaffing and suggests the program is more of a PR exercise than a genuine security strategy.
+23,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,medium,The question implies that public transport scheduling is inadequate for working population needs and challenges the Minister's response by implying it is a result of their inaction.
+24,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,high,The question implies that the fast ferry service between Gozo and Valletta is inconsistent and challenges the Minister's response by suggesting it may be on the verge of collapse.
+25,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,medium,The question implies criticism of the Minister's stance on waste separation and enforcement.
+26,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,high,The question uses a veiled accusation to challenge the Minister's explanation for school maintenance delays.
+27,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,medium,The question implies criticism of the domestic violence support units and suggests a lack of adequate protection for victims.
+28,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,high,The question uses a veiled accusation to challenge the Prime Minister's justification for 'persons of trust' appointments.
+29,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,medium,The question implies criticism of the road safety audits and suggests a potential prioritization of speed over pedestrian safety.
+30,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,medium,The question implies criticism of the justice system's performance and seeks a response implying an admission of crisis.
+31,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,high,The question suggests that the Minister is responsible for the high wait times and implies a hidden accusation of failure in the primary healthcare system.
+32,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,medium,The question uses language implying criticism of public consultations and suggests that they are merely 'box-ticking' exercises.
+33,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question directly asks for a detailed schedule, which is a clear request for information and not an assertion or accusation."
+34,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,medium,"The question seeks a list of contractors, which is a direct directive to the Minister for action."
+35,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The MP requests a list of projects and their completion dates, which is a clear directive question."
+36,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,medium,"The MP asks for a breakdown of expenditure on school repairs, which is a request for information and action."
+37,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The MP requests a list of new lease agreements, which is a clear directive question."
+38,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,medium,"The MP asks for a list of medical equipment purchased for the new community clinic, which is a request for information and action."
+39,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,The MP requests confirmation on a contract signed for police vehicle procurement and table the contract.
+40,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,The MP requests a breakdown of nursing staff levels by department.
+41,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,medium,The MP asks for a list of NGOs receiving government grants for social inclusion projects in 2023.
+42,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,The MP requests a timeframe for the conclusion of the waste-to-energy facility tender.
+43,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,medium,The MP asks for statistics on laptop distribution to students in Year 7 during the last school term.
+44,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,The MP requests a list of all consultancy contracts awarded by the Office of the Prime Minister since January 2024.
+45,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,The question directly asks for a table of inspection reports.
+46,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,medium,The question requests a detailed timeframe for the completion of the breakwater repairs.
+47,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,The question asks for a list of enforcement notices issued by the Building and Construction Authority.
+48,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,medium,The question requests a breakdown of costs associated with the urban greening project.
+49,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,The question asks for a list of public sports facilities undergoing maintenance or renovation.
+50,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer directly provides the requested information: 'A total of 412 social housing units underwent significant refurbishment and were subsequently re-allocated to tenants during the course of 2023.'
+51,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer directly provides the requested information: 'The Ministry for Gozo and Planning confirms that the fast ferry schedule will be augmented by four additional daily round trips starting from the first week of June to accommodate increased seasonal demand.'
+52,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,"The answer directly provides the requested information: 'The Ministry for Education, Sport, Youth, Research and Innovation states that the total expenditure for the free school transport scheme for the current 2023/2024 scholastic year stands at €28.5 million.'"
+53,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,"The answer directly provides the requested information: 'The Ministry for the Economy, European Funds and Lands reports that 87 small and medium-sized enterprises were approved for and received funding under the Digitalization Scheme between January and March 2024.'"
+54,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer directly provides the requested information: 'The Ministry for Social Policy and Children's Rights confirms that 12 additional social workers have been recruited and assigned to the domestic violence support unit since the beginning of this year.'
+55,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,"The answer directly provides specific details about the park's location, budget, and timeline."
+56,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer provides a clear numerical figure for work permit renewals processed during February 2024.
+57,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer directly states the exact weekly increase in the disability pension as €15.00.
+58,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer provides a specific completion date for the Gozo road works project.
+59,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer directly states the number of new courses introduced at MCAST this academic year.
+60,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer directly provides the number of inspections conducted.
+61,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer clearly states the number of new beds added.
+62,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer provides a specific budget allocation for the repair work.
+63,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer states the number of officers recruited and their completion of training.
+64,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer provides details about the hub's operational status and hours.
+65,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer directly provides the daily output of the desalination plant.
+66,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,medium,The answer provides a specific timeline for the resurfacing works.
+67,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,high,The answer implies information about the waiting list but does not provide an exact number.
+68,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,medium,The answer provides a vague timeline for the expenditure breakdown.
+69,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,high,The answer implies information about the completion date but does not provide a specific date.
+70,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,medium,The answer provides an update on the program's progress but does not give a specific launch date.
+71,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,high,"The answer mentions that the budget is allocated based on technical surveys and prioritization, which implies an indirect response to the question."
+72,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,medium,"The answer refers to transparency guidelines and publication in the government gazette as required by law, indicating a partial response."
+73,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,high,"The answer focuses on judicial reforms and digital court systems aimed at increasing efficiency and reducing backlogs, which is an indirect response to the question."
+74,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,medium,The answer mentions engagement of professional services but does not provide a specific list of consultants and their remuneration packages.
+75,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,medium,The answer provides an update on the evaluation process but does not directly provide the success rate.
+76,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,high,The answer mentions efforts to optimize waiting times but doesn't give a specific number.
+77,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,medium,The answer states that data is being verified and reconciled but does not provide the exact figure.
+78,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,high,The answer mentions ongoing discussions about the service launch but doesn't give a specific date.
+79,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,medium,The answer mentions that financial records are subject to auditing procedures but does not provide a breakdown of the spending.
+80,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The answer refers to a previous PQ, which is a non-reply."
+81,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The answer states the information will be given in another sitting, indicating a deferral."
+82,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The answer suggests referring to another minister for the requested information, which is a non-reply."
+83,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The answer states that the information will be given in another sitting, indicating a deferral."
+84,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The answer refers to a previous PQ, which is a non-reply."
+85,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,The answer refers the question to another minister without providing any details.
+86,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,medium,The answer suggests referring the question to a different minister without giving specific information.
+87,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,The answer refers the question to another PQ without providing any details.
+88,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,medium,The answer suggests referring the question to a different minister without giving specific information.
+89,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,The answer refers the question to another PQ without providing any details.
+90,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The answer refers to a previous PQ, indicating a deferral."
+91,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,medium,The answer suggests referring the question to another authority.
+92,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The answer states it will be given in a future sitting, indicating deferral."
+93,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,medium,"The answer refers to another PQ, suggesting a deferral."
+94,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,The answer suggests referring the question to another authority.
+95,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,The answer refers to a future sitting and does not provide the requested information.
