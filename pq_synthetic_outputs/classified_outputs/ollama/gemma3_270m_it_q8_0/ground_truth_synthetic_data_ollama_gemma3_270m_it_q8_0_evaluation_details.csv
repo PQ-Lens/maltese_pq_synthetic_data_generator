@@ -1,0 +1,97 @@
+row_index,target,assigned_category_id,assigned_category_name,predicted_category_id,predicted_category_name,accurate,confidence,rationale
+0,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+1,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+2,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+3,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+4,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+5,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+6,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+7,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+8,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+9,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+10,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+11,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+12,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+13,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+14,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+15,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+16,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,,
+17,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,,one concise sentence
+18,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,,
+19,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,,
+20,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,low,One concise sentence
+21,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,low,Information-Seeking Questions
+22,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,low,Information-Seeking Questions
+23,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,,one concise sentence
+24,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,,
+25,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,low,Information-Seeking Questions
+26,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,low,Information-Seeking Questions
+27,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,,One concise sentence
+28,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,,
+29,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,low,Information-Seeking Questions
+30,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,,
+31,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,,
+32,question,A2,Assertion / Hidden-Accusation Questions,A1,Information-Seeking Questions,no,,
+33,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,,one concise sentence
+34,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,,one concise sentence
+35,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,,One concise sentence
+36,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,,one concise sentence
+37,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,,one concise sentence
+38,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,low,Information-Seeking Questions
+39,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,low,Information-Seeking Questions
+40,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,,One concise sentence
+41,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,,one concise sentence
+42,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,,one concise sentence
+43,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,,one concise sentence
+44,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,,one concise sentence
+45,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,low,Information-Seeking Questions
+46,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,,one concise sentence
+47,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,,
+48,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,,one concise sentence
+49,question,A3,Request / Directive Questions,A1,Information-Seeking Questions,no,,one concise sentence
+50,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+51,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+52,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+53,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+54,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+55,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+56,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+57,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+58,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+59,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+60,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+61,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+62,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+63,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+64,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+65,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,one concise sentence
+66,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,,
+67,answer,B2,Answers by Implication (Indirect/Partial),B1,Replies (Direct Answers),no,,one concise sentence
+68,answer,B2,Answers by Implication (Indirect/Partial),B1,Replies (Direct Answers),no,,one concise sentence
+69,answer,B2,Answers by Implication (Indirect/Partial),B1,Replies (Direct Answers),no,,One concise sentence
+70,answer,B2,Answers by Implication (Indirect/Partial),B1,Replies (Direct Answers),no,,one concise sentence
+71,answer,B2,Answers by Implication (Indirect/Partial),B1,Replies (Direct Answers),no,low,One concise sentence
+72,answer,B2,Answers by Implication (Indirect/Partial),B1,Replies (Direct Answers),no,,One concise sentence
+73,answer,B2,Answers by Implication (Indirect/Partial),B1,Replies (Direct Answers),no,,one concise sentence
+74,answer,B2,Answers by Implication (Indirect/Partial),B1,Replies (Direct Answers),no,,One concise sentence
+75,answer,B2,Answers by Implication (Indirect/Partial),B1,Replies (Direct Answers),no,,one concise sentence
+76,answer,B2,Answers by Implication (Indirect/Partial),B1,Replies (Direct Answers),no,,one concise sentence
+77,answer,B2,Answers by Implication (Indirect/Partial),B1,Replies (Direct Answers),no,,one concise sentence
+78,answer,B2,Answers by Implication (Indirect/Partial),B1,Replies (Direct Answers),no,,one concise sentence
+79,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,,
+80,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+81,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+82,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+83,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+84,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+85,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+86,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+87,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+88,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+89,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+90,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+91,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+92,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+93,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+94,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence
+95,answer,B3,Non-Replies (Deferral/Referral/Reroute),B1,Replies (Direct Answers),no,,one concise sentence

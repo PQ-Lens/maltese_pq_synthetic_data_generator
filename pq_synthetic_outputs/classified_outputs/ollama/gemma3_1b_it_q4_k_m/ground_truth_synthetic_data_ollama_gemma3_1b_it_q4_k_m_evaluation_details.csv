@@ -1,0 +1,97 @@
+row_index,target,assigned_category_id,assigned_category_name,predicted_category_id,predicted_category_name,accurate,confidence,rationale
+0,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,"The question seeks specific factual data – statistics – regarding a period of time, aligning with information-seeking inquiries."
+1,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks specific information about a planned event and its schedule.
+2,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,"The question seeks information about the distribution of new equipment to schools, aligning with the definition of Information-Seeking Questions."
+3,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,"The question seeks information about occupancy rates, aligning with the definition of Information-Seeking Questions."
+4,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,low,"The question seeks information about bed capacity, aligning with the definition of Information-Seeking Questions."
+5,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks specific factual information about the number of enforcement officers.
+6,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks factual information about firefighting equipment acquisition.
+7,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks specific location data related to EV charging infrastructure.
+8,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks specific factual data – the number of trees planted. It’s a standard information-seeking inquiry.
+9,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks factual information about student participation in a specific program.
+10,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks factual information about recruitment numbers.
+11,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,"The question seeks specific information about application approvals, aligning with the definition of Information-Seeking Questions."
+12,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks factual information about EU funds allocation to SMEs.
+13,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks specific factual data – passenger numbers – aligning with information-seeking inquiries.
+14,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,"The question seeks information about medication availability, aligning with the definition of Information-Seeking Questions."
+15,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks specific factual data – the number of reservoirs – indicating information-seeking.
+16,question,A1,Information-Seeking Questions,A1,Information-Seeking Questions,yes,high,The question seeks specific factual data – the number of localities – indicating information-seeking.
+17,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,high,"The question challenges the Minister's prioritization of rural road improvements, implying a lack of accountability for the existing state of the roads."
+18,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,high,The question directly challenges the Minister's admission of failure and highlights a specific metric (wait times) as a key indicator of the strategy's effectiveness.
+19,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,high,The question challenges the Minister's action and implies a perceived lack of accountability for a specific outcome.
+20,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,,
+21,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,low,The question challenges the Minister's action and its impact on vulnerable patients.
+22,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,high,"The question challenges the Minister's justification for understaffing, implying a lack of genuine strategy."
+23,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,low,The question implies criticism of the scheduling through a hidden accusation of inadequacy.
+24,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,low,"The question challenges the government's handling of a specific service, implying criticism through the assertion of inconsistency and potential subsidy."
+25,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,low,"The question challenges the Minister's belief about the effectiveness of the waste separation strategy, implying criticism."
+26,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,low,"The question implies a criticism of mismanagement and diversion of funds, aligning with the assertion category."
+27,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,low,The question implies criticism regarding the lack of capacity and potential harm to victims.
+28,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,high,"The question challenges the Prime Minister's justification for a significant increase in appointments, implying criticism of the process."
+29,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,low,"The question challenges the withholding of information regarding a specific audit process, implying criticism."
+30,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,low,"The question challenges the minister's response to a crisis, implying criticism."
+31,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,low,The question implies criticism regarding the performance of the healthcare system.
+32,question,A2,Assertion / Hidden-Accusation Questions,A2,Assertion / Hidden-Accusation Questions,yes,high,"The question directly challenges the Prime Minister's actions regarding public consultation, implying a lack of accountability."
+33,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question explicitly requests a schedule, aligning with the directive category of providing a breakdown."
+34,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question explicitly requests a table of contractors, aligning with the directive category."
+35,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question directly requests a list and timeframe, aligning with the directive category."
+36,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question explicitly requests a breakdown of expenditure, aligning with the directive category."
+37,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question directly requests the Minister to provide a list, aligning with the directive category."
+38,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,The question directly requests a specific action – a list – indicating a directive to the Minister.
+39,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question directly requests confirmation of a contract and table of details, aligning with the directive category."
+40,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,The question directly requests a breakdown of a specific action – providing a staffing level breakdown – aligning with the directive category.
+41,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question explicitly requests the Minister to provide a list, aligning with the directive category."
+42,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,low,"The question requests a timeframe, aligning with the directive category."
+43,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question directly requests a breakdown of a specific statistic, aligning with the directive category."
+44,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question explicitly requests the Minister to table a list of documents, aligning with the directive category."
+45,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question explicitly requests a table of documents, aligning with the directive category."
+46,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question explicitly requests a timeframe and table of documents, aligning with the directive category."
+47,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question directly requests a list of documents, aligning with the directive category."
+48,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question directly requests a breakdown of costs, aligning with the directive category."
+49,question,A3,Request / Directive Questions,A3,Request / Directive Questions,yes,high,"The question directly requests a table of facilities, aligning with the directive category."
+50,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,Directly answers the question about refurbishment totals.
+51,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The Ministry for Gozo and Planning confirms the schedule augmentation.
+52,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,Direct answer to the question about the expenditure amount.
+53,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,Direct answer to the question about SME grants.
+54,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer directly addresses the question of new social workers recruited.
+55,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,Direct answer to the question about plans and budget.
+56,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,Direct answer to the question about renewal numbers.
+57,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,Direct answer to the question about the weekly increase.
+58,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer directly addresses the question of the projected completion date.
+59,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,Directly answers the question about the number of new courses.
+60,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer directly addresses the question of inspection numbers.
+61,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,Directly answers the question about bed additions.
+62,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,"The Ministry for Transport, Infrastructure and Public Works confirms a budget allocation for the repair of the coastal sea wall."
+63,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,Direct answer to the question about recruitment numbers.
+64,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,The answer directly addresses the question with the requested facts - confirmation of full operational status and hours.
+65,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,Direct answer to the question about daily output.
+66,answer,B1,Replies (Direct Answers),B1,Replies (Direct Answers),yes,high,Direct answer to the question about the resurfacing schedule.
+67,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,low,The response provides a general update without specifying a precise number.
+68,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,high,The answer provides an update but doesn't offer a detailed breakdown.
+69,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,low,The response provides an update but doesn't offer a specific date.
+70,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,high,"The answer provides a timeline of preparations, indicating an indirect response to the question."
+71,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,high,The answer provides a general overview but doesn't specify the exact budget allocation.
+72,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,high,"The response provides a general statement about the process, rather than answering the specific question about the publication of the list."
+73,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,high,The answer provides a general overview of judicial reforms without addressing the specific question of pending cases and their duration.
+74,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,low,The response offers a general overview without specifying details about consultant contracts or remuneration packages.
+75,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,high,The response provides an update but doesn't answer the specific question about success rates.
+76,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,low,The response provides an update but doesn't offer a specific number.
+77,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,high,"The response provides an update on waste collection data, but doesn't answer the specific question about recycled plastic waste."
+78,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,low,The response provides a general update without specifying a start date.
+79,answer,B2,Answers by Implication (Indirect/Partial),B2,Answers by Implication (Indirect/Partial),yes,high,"The answer provides a general statement about expenditure, without detailing the breakdown requested."
+80,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The response refers to a previous question, indicating a deferral/referral."
+81,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,The response indicates a lack of specific information and a deferral to a future sitting.
+82,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The response is a deferral/referral, not providing the requested information."
+83,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The response indicates a deferral to a future sitting, which aligns with the request for a breakdown of FDI statistics."
+84,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The response refers to a previous question, indicating a deferral/referral."
+85,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The response is a deferral, indicating the Minister is not providing details."
+86,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The response indicates a lack of specific details, aligning with the 'Non-Replies' category."
+87,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The response refers to a previous question, indicating a deferral/referral."
+88,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The response directly refers to a deferral/referral, indicating no substantive answer is provided."
+89,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The response indicates no information is available, deferring to a future sitting."
+90,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The response refers to a previous question, indicating a deferral/referral."
+91,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The response is a deferral, indicating that the Minister will address the question to a higher authority."
+92,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The response indicates a deferral to a future sitting, lacking specific data."
+93,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The response refers to a future sitting, indicating a deferral/referral."
+94,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,"The response is a deferral, not providing the requested information."
+95,answer,B3,Non-Replies (Deferral/Referral/Reroute),B3,Non-Replies (Deferral/Referral/Reroute),yes,high,The response indicates the information is being processed and will be presented later.

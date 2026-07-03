@@ -1,0 +1,11 @@
+target,metric_scope,category_id,category_name,evaluated_count,assigned_count,ollama_reference_count,yes_count,no_count,true_positive,false_positive,false_negative,precision,recall,f1,accuracy,based_on_column
+question,category,A1,Information-Seeking Questions,50,17,50,17,0,17,33,0,0.34,1.0,0.507463,,Question Categorization accuracy
+question,category,A2,Assertion / Hidden-Accusation Questions,50,16,0,0,16,0,0,16,0.0,0.0,0.0,,Question Categorization accuracy
+question,category,A3,Request / Directive Questions,50,17,0,0,17,0,0,17,0.0,0.0,0.0,,Question Categorization accuracy
+question,macro_average,ALL,All categories,50,50,50,17,33,17,33,33,0.113333,0.333333,0.169154,0.34,Question Categorization accuracy
+question,micro_average,ALL,All categories,50,50,50,17,33,17,33,33,0.34,0.34,0.34,0.34,Question Categorization accuracy
+answer,category,B1,Replies (Direct Answers),46,17,45,17,0,17,28,0,0.377778,1.0,0.548387,,Answer Categorization accuracy
+answer,category,B2,Answers by Implication (Indirect/Partial),46,13,1,1,12,1,0,12,1.0,0.076923,0.142857,,Answer Categorization accuracy
+answer,category,B3,Non-Replies (Deferral/Referral/Reroute),46,16,0,0,16,0,0,16,0.0,0.0,0.0,,Answer Categorization accuracy
+answer,macro_average,ALL,All categories,46,46,46,18,28,18,28,28,0.459259,0.358974,0.230415,0.391304,Answer Categorization accuracy
+answer,micro_average,ALL,All categories,46,46,46,18,28,18,28,28,0.391304,0.391304,0.391304,0.391304,Answer Categorization accuracy
